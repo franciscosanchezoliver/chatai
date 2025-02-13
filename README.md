@@ -15,7 +15,8 @@ A simple and customizable chat UI built with React, designed as a template for c
 Clone the repository:  
 ```bash
 git clone https://github.com/your-username/chat-ui-template.git
-cd chat-ui-template
+git clone git@github.com:franciscosanchezoliver/chatai.git
+cd chatai
 ```
 
 Install dependencies:  
