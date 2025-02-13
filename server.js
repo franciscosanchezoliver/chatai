@@ -3,9 +3,6 @@
 // This will load variables from .env file into process.env
 require("dotenv").config();
 
-console.log("OpenAI API key:", process.env.OPENAI_API_KEY);
-
-
 // Web framework for handling HTTP requests.
 const express = require("express");
 
@@ -18,8 +15,6 @@ const cors = require("cors");
 // OpenAI API client
 const { OpenAI } = require("openai");
 
-
-
 // Initialize Express App
 const app = express();
 
@@ -28,11 +23,6 @@ app.use(cors());
 
 // Automatically parses incoming request bodies as JSON.
 app.use(express.json());
-
-
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY
-});
 
 // End point for chat
 app.post(
@@ -47,14 +37,12 @@ app.post(
             messageReceived = `${messageRole} | ${messageContent}`
             console.log(messageReceived)
 
-            // const response = await openai.chat.completions.create({
-                // model: "gpt-4-turbo", 
-                // messages: messages
-            // })
-
             response = {
                 "role": "server",
-                "content": "Hello Front"
+                "content": "I'm a chatbot UI template! You can customize me " + 
+                           "to connect with any API and provide intelligent " + 
+                           "responses. Feel free to integrate me with your own " + 
+                           "backend and create amazing chat experiences!"
             }
 
             res.json(JSON.stringify(response))
