@@ -1,13 +1,16 @@
 
 # Chat UI Template  
 
-A simple and customizable chat UI built with React, designed as a template for chatbot projects.  
+A simple and customizable chat UI built with React, designed as a 
+template for chatbot projects.  
+
+![Chat Example](./docs/imgs/print_example.jpg)
 
 ## 🚀 Features  
 
-- Clean and modern chat interface  
+- Clean and simple interface
 - Easily customizable for different chatbot projects  
-- Built with React and styled with TailwindCSS  
+- Built with React and styled with CSS 
 - Open-source and ready for integration  
 
 ## 📦 Installation  
