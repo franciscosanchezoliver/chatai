@@ -12,9 +12,6 @@ const express = require("express");
 // backend on localhost:3001).
 const cors = require("cors"); 
 
-// OpenAI API client
-const { OpenAI } = require("openai");
-
 // Initialize Express App
 const app = express();
 
