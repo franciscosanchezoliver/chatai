@@ -4,38 +4,74 @@
 A simple and customizable chat UI built with React, designed as a 
 template for chatbot projects.  
 
+## 📸 Preview  
 ![Chat Example](./docs/imgs/print_example.jpg)
 
 ## 🚀 Features  
 
+- Ready-to-use chat interface  
 - Clean and simple interface
+- Mock backend included for easy testing  
 - Easily customizable for different chatbot projects  
 - Built with React and styled with CSS 
 - Open-source and ready for integration  
 
-## 📦 Installation  
+## 📦 Installation & Setup  
 
-Clone the repository:  
+### 1️⃣ Clone the Repository  
 ```bash
 git clone git@github.com:franciscosanchezoliver/chatai.git
 cd chatai
 ```
 
-Install dependencies:  
+### 2️⃣ Start the Mock Backend  
 ```bash
+cd server
 npm install
+node server.js
 ```
 
-## 💻 Usage  
+This will start a simple mock server that provides example responses.  
 
-Start the client:
+### 3️⃣ Start the Chat UI  
+In a separate terminal:  
 ```bash
-cd client;
-npm start;
+cd client
+npm install
+npm start
 ```
 
-To customize the UI, modify the `src/components` folder.  
-To customize the style, modify the `App.css` file.
+## 🔧 Customization  
+
+- Modify `server/server.js` to change mock responses.  
+- Point the frontend to a real API by updating the request logic in `client/src/api.js`.  
+- Customize UI styles in `client/src/components`.  
+
+
+
+### How to test the Mock Backend
+
+
+#### Powershell
+```powershell
+$messages =@{ role = "user"; "userMessage" = "Hello, what do you do?" }
+$body = $messages | ConvertTo-Json 
+$response = Invoke-RestMethod -Uri "http://localhost:3001/chat" `
+                              -Method Post `
+                              -Headers @{ "Content-Type" = "application/json" } `
+                             -Body $body
+
+Write-Output($response)
+```
+
+#### bash
+```bash
+echo '{"userMessage": "Hello, what do you do?"}' > data.json
+
+curl -X POST http://localhost:3001/chat \
+     -H "Content-Type: application/json" \
+     --data @data.json
+```
 
 
 ## 📜 License  
@@ -43,28 +79,3 @@ To customize the style, modify the `App.css` file.
 This project is open-source under the [MIT License](LICENSE).  
 
 ---
-
-Would you like me to add anything else, like a demo screenshot or deployment instructions? 🚀
-
-### How to test the Mock Backend
-
-#### Powershell
-```powershell
-$messages = @(
-	@{ role = "system"; content = "You are a helpful assistant" },
-	@{ role = "user"; content = "Hello, how are you?" }
-)
-
-$messages = @(
-    @{ role = "system"; content = "You are a helpful assistant." },
-    @{ role = "user"; content = "Hello, how are you?" }
-)
-
-$body = @{ messages = $messages } | ConvertTo-Json -Depth 10
-
-$response = Invoke-RestMethod -Uri "http://localhost:3001/chat" `
-                              -Method Post `
-                              -Headers @{ "Content-Type" = "application/json" } `
-                             -Body $body
-
-```

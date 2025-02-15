@@ -26,12 +26,17 @@ app.post(
     "/chat", 
     async (req, res) => {
         try{
-            // Read the user message from the request body which is a
-            // JSON object 
-            let userMessage = req.body.userMessage
-            userMessage = userMessage.trim().replace(/"$/, ""); 
-            userMessage = JSON.parse(userMessage)
-            console.log(userMessage)
+            console.log("Raw body:", req.body);
+            console.log("Received userMessage:", req.body.userMessage);
+        
+            let userMessage = req.body.userMessage;
+        
+            // If userMessage is already a string, don't parse it again
+            if (typeof userMessage !== "string") {
+                return res.status(400).json({ error: "Invalid request format" });
+            }
+            userMessage = userMessage.trim();
+            console.log("Parsed userMessage:", userMessage);
 
             // Response object
             response = {
