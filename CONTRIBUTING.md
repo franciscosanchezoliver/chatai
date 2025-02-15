@@ -10,7 +10,7 @@ First off, thank you for considering contributing to this project! We appreciate
 ### 2. Clone your fork
    - Clone your fork to your local machine:
      ```bash
-     git clone https://github.com/[your-username]/[repo-name].git
+     git clone git@github.com:franciscosanchezoliver/chatai.git
      ```
 
 ### 3. Create a branch
@@ -41,7 +41,7 @@ First off, thank you for considering contributing to this project! We appreciate
    - Provide a description of your changes and why you're proposing them.
 
 ## Code Style
-   - Please follow the [code style](#link-to-style-guide) guidelines for this project. Consistency is key to maintaining a clean codebase.
+   - Please follow good code guidelines for this project. Consistency is key to maintaining a clean codebase.
    - Use meaningful variable names, write clear comments, and ensure your code is well-organized.
 
 ## Testing
@@ -55,8 +55,5 @@ First off, thank you for considering contributing to this project! We appreciate
      - Expected vs. actual behavior
      - Any error messages or logs
 
-## Code of Conduct
-   - By contributing to this project, you agree to follow the [Code of Conduct](#link-to-code-of-conduct) to ensure a welcoming and inclusive environment.
-
 ## Thank You!
-   - Thanks for contributing to [Your Project Name]! We appreciate your help in making this project better!
+   - Thanks for contributing to ChatAI! We appreciate your help in making this project better!
