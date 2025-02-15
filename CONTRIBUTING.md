@@ -1,4 +1,4 @@
-# Contributing to [Your Project Name]
+# Contributing to ChatAI
 
 First off, thank you for considering contributing to this project! We appreciate all kinds of contributions, from reporting issues to submitting pull requests.
 
